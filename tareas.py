@@ -27,6 +27,7 @@ def modify_task_status(tasks):
                     print("Estado no válido. Inténtalo de nuevo.")
                     new_status = input("Introduce el nuevo estado: ")
             tasks[index]["status"] = new_status
+            tasks[index]["date_and_our"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             save_tasks(tasks)  # Guarda los cambios en el archivo JSON
             print("Estado modificado exitosamente.")
         else:

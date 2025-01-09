@@ -1,5 +1,5 @@
 from almacenamiento import load_tasks
-from tareas import create_new_task, modify_task_status, list_tasks
+from tareas import create_new_task, modify_task_status, list_tasks, delete_task
 from estadisticas import show_statistics
 from menu import show_menu
 
@@ -8,7 +8,7 @@ def main():
 
     while True:
         show_menu()
-        option = input("Elige una opción (1-5): ")
+        option = input("Elige una opción (1-6): ")
 
         if option == "1":
             create_new_task(tasks)
@@ -19,6 +19,8 @@ def main():
         elif option == "4":
             list_tasks(tasks)
         elif option == "5":
+            delete_task(tasks)
+        elif option == "6":
             print("Saliendo del programa...")
             break
         else:
